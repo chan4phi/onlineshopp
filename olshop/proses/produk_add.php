@@ -1,17 +1,25 @@
 <?php
 include "koneksi.php";
 
-$produkID		=	"PO009";
+$produkID		=	getAutoId('produkID', 'produk', 'PRD');
 $nama_produk	=	$_POST['nama_produk'];
 $harga			=	$_POST['harga'];
 $qty			=	$_POST['qty'];
-$gambar			=	"produksad.jpg";
+
+$namaFile		=	$_Files['gambar']['name'];
+$namaSementara	=	$_Files['gambar']['tmp_name'];
+$dirUpload		=	"../gambar/";
+
+$terupload		=	move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+
+$gambar			=	"gambar/".$namaFile;
 
 $query = "INSERT INTO `produk`
-	(`produkID`, `nama_produk`, `harga`, `qty`,  `gambar`) VALUES ('$produkID', '$nama_produk', '$harga', '$qty', '$gambar')";
+	(`produkID`, `NamaProduk`, `Harga`, `Qty`, `Gambar`) VALUES ('$produkID', '$nama_produk', '$harga', '$qty', '$gambar')";
 
-	echo $query;
-mysql_query($query);
 	
+	mysql_query($query);
+	
+
 
 ?>

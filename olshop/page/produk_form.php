@@ -1,4 +1,4 @@
- <form class="form-horizontal" method= "POST" action="proses/produk_add.php">
+ <form class="form-horizontal" method= "POST" action="proses/produk_add.php" enctype="multipart/form-data">
   <div class="form-group">
     <label class="control-label col-sm-4">Nama_Produk:</label>
     <div class="col-sm-10">
