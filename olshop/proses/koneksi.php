@@ -3,7 +3,7 @@
 $db_host	= "localhost";
 $db_user	= "root";
 $db_pwd		= "";
-$db_name	= "chan";
+$db_name	= "olshop";
 
 mysql_connect($db_host,$db_user,$db_pwd);
 mysql_select_db($db_name);
@@ -12,14 +12,12 @@ mysql_select_db($db_name);
 function getAutoId($fields, $table, $inisial)
 {
 	$leng_inisial 	= strlen($inisial);
-	$query			= mysql_query('SELECT MAX('.
-						$fields.') as max from '.
-						$table);
+	$query			= mysql_query('SELECT MAX('.$fields.') as max from '.$table);
 	
 	$result			= mysql_fetch_array($query);
 	$number 		= 0;
 	$imax			= 10;
-	$tmpfile		= "";
+	$tmp			= "";
 	
 	if ($result['max'] !='') {
 		$number = substr($result['max'],strlen($inisial));

@@ -10,7 +10,7 @@ $namaFile		=	$_Files['gambar']['name'];
 $namaSementara	=	$_Files['gambar']['tmp_name'];
 $dirUpload		=	"../gambar/";
 
-$terupload		=	move_uploaded_file($namaSementara, $dirUpload.$namaFile);
+$terupload		=	move_uploaded_file($namaSementara,$dirUpload.$namaFile);
 
 $gambar			=	"gambar/".$namaFile;
 
