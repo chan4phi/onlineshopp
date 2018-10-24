@@ -1,3 +1,6 @@
+<?php 
+session_start();
+if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +102,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="proses/logout.php">Logout</a>
           </div>
         </div>
       </div>
@@ -118,3 +121,4 @@
   </body>
 
 </html>
+<?php } else include "public.php"; ?>

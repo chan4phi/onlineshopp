@@ -1,23 +1,24 @@
+
 <?php
 	$id = "";
 	$nama_produk="";
 	$harga="";
 	$qty="";
-	$action ="proses/produk_add.php";
+	$action ="../proses/produk_add.php";
  if(isset($_GET['id'])){
 	 $id = $_GET['id'];
 	 include"proses/koneksi.php";
-	 $query = "select * from produk where produkID = '".$id."'";
+	 $query = "select * from produk where ProdukID = '".$id."'";
 	 $row = mysql_query($query);
 	 $res = mysql_fetch_array($row);
 	 $nama_produk= $res['NamaProduk'];
 	 $harga= $res['Harga'];
 	 $qty= $res['Qty'];
-	 $action ="proses/produk_update.php";
+	 $action ="../proses/produk_update.php";
 }
  ?>
 
- <form class="form-horizontal" method= "POST" action="proses/produk_add.php" action="<?php echo $action; ?>" enctype="multipart/form-data">
+ <form class="form-horizontal" method="POST" action="<?php echo $action; ?>" enctype="multipart/form-data">
   <div class="form-group">
   <input type="hidden" value="<?php echo $id; ?>" name="id">
     <label class="control-label col-sm-4">Nama_Produk:</label>
@@ -45,7 +46,7 @@
   <div class="form-group">
 	<label class="control-label col-sm-2">Gambar:</label>
 		<div class="col-sm-4">
-			<input type="file" class="form-control" name="gambar">
+			<input type="file" class="btn btn-warning" name="gambar">
     </div>
   </div>
   
