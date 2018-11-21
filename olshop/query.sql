@@ -1,0 +1,1 @@
+UPDATE produk SET nama_produk='Monitor', kategori='Foods', harga=20000, qty=10 WHERE produkId='PRD0000009'
