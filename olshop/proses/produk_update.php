@@ -1,14 +1,18 @@
 <?php
-include "koneksi,php";
+include"koneksi.php";
 
-$id		= $_POST['id'];
-$nama	= $_POST['nama_produk'];
-$harga	= $_POST['harga'];
-$qty	= $_POST['qty'];
+$id 	= $_POST['id'];
+$nama 	= $_POST['nama_produk'];
+$harga 	= $_POST['harga'];
+$kategori 	= $_POST['kategori'];
+$qty 	= $_POST['qty'];
 
-$query	= "update produk set NamaProduk='$nama', Harga='harga', Qty='$qty' where produkID='$id'";
-
+$query = "UPDATE produk SET
+		nama_produk='$nama',
+		kategori='$kategori',
+		harga=$harga,
+		qty=$qty
+		WHERE produkId='$id'";
 mysql_query($query);
 
 header("location:../index.php?mod=produk_list");
-?>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
+if(isset($_SESSION['username']) &&  $_SESSION['username'] !='' && $_SESSION['level'] =='admin'){ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,7 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Blank Page</title>
+    <title>Olshop</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-
+	<script src="vendor/jquery/jquery.min.js"></script>
   </head>
 
   <body id="page-top">
@@ -60,15 +60,14 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
     <div id="wrapper">
 
       <!-- Sidebar -->
-      <?php include "menu.php"; ?>
+		<?php include "menu.php"; ?>
 
       <div id="content-wrapper">
 
         <div class="container-fluid">
-			<?php include "module.php"; ?>
-        </div>
+		<?php include "module.php"; ?>
         <!-- /.container-fluid -->
-
+		</div>
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">
@@ -99,7 +98,7 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body"> <?php echo 'hai, '.$_SESSION['nama'].' apakah anda Yakin ingin keluar..?'?></div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="proses/logout.php">Logout</a>
@@ -109,7 +108,7 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -121,4 +120,14 @@ if(isset($_SESSION['username']) && $_SESSION['username'] !=''){ ;?>
   </body>
 
 </html>
-<?php } else include "public.php"; ?>
+<?php 
+
+}else
+	include "public.php";
+?>
+
+
+
+
+
+

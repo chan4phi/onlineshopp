@@ -1,17 +1,21 @@
-<?php
+<?php 
 
-if(isset($_GET['mod'])) {
+if(isset($_GET['mod'])){
 	$page = $_GET['mod'];
 	
-	switch($page){
+	switch($page) {
 		case "produk_form":
-			include "page/produk_form.php";
+			include "page/formproduk.php";
 		break;
+		
 		case "produk_list":
-			include "page/produk_list.php";
+			include "page/listproduk.php";
+		break;
+		
+		case "pesanan_list";
+			include "page/listpesanan.php";
 		break;
 	}
 }else{
-	echo "module tidak ditemukan";
+	echo "Module Tidak Ditemukan";
 }
-?>
